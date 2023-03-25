@@ -31,15 +31,46 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: null,
-      backgroundColor: Colors.white,
-      body: Container(
-        child: Center(
-          child: Text(
-            uid!,
-            style: TextStyle(color: Colors.black54),
+      appBar: AppBar(
+        title: Text('Recent Transactions'),
+        backgroundColor: Colors.yellow.shade800,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  leading: Icon(Icons.payment),
+                  title: Text('Transaction $index'),
+                  subtitle: Text('Date: 01/01/2022'),
+                  trailing: Text('\$10.00'),
+                );
+              },
+            ),
           ),
-        ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.yellow.shade800,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.send),
+            label: 'Send',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'History',
+          ),
+        ],
       ),
     );
   }
