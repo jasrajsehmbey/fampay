@@ -3,6 +3,7 @@
 import 'package:fampay/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /* Created by Jasraj*/
 
@@ -19,11 +20,25 @@ class _SplashScreenState extends State<SplashScreen>
   late Animation animation;
 
   bool hasInternet = true;
+  late final String? action;
+  String route = AppRoutes.aftersplashRoute;
 
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() async {
+    // TODO: implement didChangeDependencies
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    action = prefs.getString('id');
+    if (action != null) {
+      route = AppRoutes.homeRoute;
+    }
+
+    super.didChangeDependencies();
   }
 
   @override
@@ -49,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (hasInternet) {
       Navigator.of(context).pushReplacementNamed(
-        AppRoutes.loginRoute,
+        route,
       );
     } else {
       Navigator.of(context).pushReplacementNamed(AppRoutes.noInternetRoute);

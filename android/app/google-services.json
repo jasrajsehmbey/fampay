@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716068153867",
+    "project_id": "fampay-58e60",
+    "storage_bucket": "fampay-58e60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716068153867:android:4f2e055dd6b5b76571350e",
+        "android_client_info": {
+          "package_name": "jasraj.com.fampay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716068153867-7nuslhsc9o0f4k8p5c89n66s4oa50tc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD2k0ra-9wVfQB1PSsDLrqfMZd6HHeWBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716068153867-7nuslhsc9o0f4k8p5c89n66s4oa50tc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
