@@ -87,7 +87,7 @@ class _OTPScreenState extends State<OTPScreen> {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Not a Valid OTP')));
                           setState(() {
-                            loader = false;
+                            loader = true;
                           });
                         }
                       },
